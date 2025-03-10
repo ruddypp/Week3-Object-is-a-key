@@ -1,7 +1,19 @@
-function graduates (students) {
-    // Code disini
+function graduates(students) {
+  let result = {};
+  for(let i = 0; i < students.length; i++){
+    let student = students[i];
+    let className = student.class;
+
+    if (student.score >= 75) {
+      if (!result[className]) {
+        result[className] = [];
+      }
+      result[className].push({ name: student.name, score: student.score });
+    }
   }
-  
+  return result;
+}
+
   console.log(graduates([
     {
       name: 'Dimitri',
